@@ -8,7 +8,7 @@ import { WizardComponent } from './../wizard/wizard.component';
 })
 export class WizardStepComponent implements OnInit {
   @Input() title: string;
-  // @Input() isActive: boolean = false;
+  @Input() isValid: boolean = true;
   private _isActive: boolean = false;
   isDisabled: boolean = true;
 

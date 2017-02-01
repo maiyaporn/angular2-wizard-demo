@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  data: any = {};
+  isCompleted: boolean = false;
 
   onStep1Next(event) {
     console.log('Step1 - Next');
@@ -18,5 +19,9 @@ export class AppComponent {
 
   onStep3Next(event) {
     console.log('Step3 - Next');
+  }
+
+  onComplete(event) {
+    this.isCompleted = true;
   }
 }
