@@ -4,7 +4,7 @@
       Angular2 - Wizard Form Demo
     </h1>
     <hr/>
-    <wizard>
+    <form-wizard>
       <wizard-step [title]="'Step1'" [isValid]="emailForm.form.valid" (onNext)="onStep1Next($event)">
         <h1>Step1</h1>
         <form #emailForm="ngForm">
@@ -24,12 +24,14 @@
       </wizard-step>
       <wizard-step [title]="'Step4'" (onComplete)="onComplete($event)">
         <div [ngSwitch]="isCompleted">
-          <div *ngSwitchDefault>Step4</div>
+          <div *ngSwitchDefault>
+            <h1>Step4</h1>
+          </div>
           <div *ngSwitchCase="true">
             <h4>Thank you! You have completed all the steps.</h4>
           </div>
         </div>
       </wizard-step>
-    </wizard>
+    </form-wizard>
   </section>
 </div>
