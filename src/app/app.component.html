@@ -4,7 +4,8 @@
       Angular2 - Wizard Form Demo
     </h1>
     <hr/>
-    <form-wizard>
+    <div style="height: 350px;">
+    <form-wizard (onStepChanged)="onStepChanged($event)">
       <wizard-step [title]="'Step1'" [isValid]="emailForm.form.valid" (onNext)="onStep1Next($event)">
         <h1>Step1</h1>
         <form #emailForm="ngForm">
@@ -16,8 +17,22 @@
           </div>
         </form>
       </wizard-step>
-      <wizard-step [title]="'Step2'" (onNext)="onStep2Next($event)">
+      <wizard-step [title]="'Step2'" [showNext]="step2.showNext" [showPrev]="step2.showPrev" (onNext)="onStep2Next($event)">
         <h1>Step2</h1>
+        <form>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="showNext" [(ngModel)]="step2.showNext"/>
+              Show Next button
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="showPrev" [(ngModel)]="step2.showPrev"/>
+              Show Previous button
+            </label>
+          </div>
+        </form>
       </wizard-step>
       <wizard-step [title]="'Step3'" (onNext)="onStep3Next($event)">
         <h1>Step3</h1>
@@ -28,10 +43,11 @@
             <h1>Step4</h1>
           </div>
           <div *ngSwitchCase="true">
-            <h4>Thank you! You have completed all the steps.</h4>
+            <h4>Thank you {{data.email}}! You have completed all the steps.</h4>
           </div>
         </div>
       </wizard-step>
     </form-wizard>
+    </div>
   </section>
 </div>

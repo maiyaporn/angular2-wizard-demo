@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  step2: any = {
+    showNext: true,
+    showPrev: true
+  };
+
   data: any = {};
   isCompleted: boolean = false;
 
@@ -23,5 +28,9 @@ export class AppComponent {
 
   onComplete(event) {
     this.isCompleted = true;
+  }
+
+  onStepChanged(step) {
+    console.log('Changed to ' + step.title);
   }
 }

@@ -7,12 +7,12 @@ import { FormWizardModule } from 'angular2-wizard';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormWizardModule
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    FormWizardModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
