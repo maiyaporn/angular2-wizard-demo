@@ -11,7 +11,14 @@ export class AppComponent {
     showPrev: true
   };
 
-  data: any = {};
+  step3: any = {
+    showSecret: false
+  };
+
+  data: any = {
+    email: 'muk@gmail.com'
+  };
+
   isCompleted: boolean = false;
 
   onStep1Next(event) {
